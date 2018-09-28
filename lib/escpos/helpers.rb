@@ -87,6 +87,19 @@ module Escpos
     end
     alias :b :bold
 
+    # Align
+    def align_left
+      Escpos.sequence(Escpos::TXT_ALIGN_LT)
+    end
+    
+    def align_right
+      Escpos.sequence(Escpos::TXT_ALIGN_RT)
+    end
+
+    def align_center
+      Escpos.sequence(Escpos::TXT_ALIGN_CT)
+    end
+
     def left(data = '')
       [
         Escpos.sequence(Escpos::TXT_ALIGN_LT),
@@ -169,7 +182,8 @@ module Escpos
         Escpos.sequence(Escpos::BARCODE_HEIGHT),
         Escpos.sequence([height]),
         Escpos.sequence(opts.fetch(:format, Escpos::BARCODE_EAN13)),
-        data
+        data,
+        "\x00"
       ].join
     end
 
