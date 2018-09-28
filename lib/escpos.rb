@@ -107,6 +107,8 @@ module Escpos
   BARCODE_CODE39              = [ 0x1d, 0x6b, 0x04 ]         # Barcode type CODE39
   BARCODE_ITF                 = [ 0x1d, 0x6b, 0x05 ]         # Barcode type ITF
   BARCODE_NW7                 = [ 0x1d, 0x6b, 0x06 ]         # Barcode type NW7
+  BARCODE_CODE93              = [ 0x1d, 0x6b, 0x07 ]         # Barcode type CODE93
+  BARCODE_CODE128             = [ 0x1d, 0x6b, 0x08 ]         # Barcode type CODE128
 
   # Images
   IMAGE                      = [ 0x1d, 0x76, 0x30, 0x00 ]    # Start image pixel data
