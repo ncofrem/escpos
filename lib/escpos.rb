@@ -92,26 +92,26 @@ module Escpos
   TXT_COLOR_RED                = [ 0x1b, 0x72, 0x01 ]        # Alternative Color (Usually Red)
 
   # Barcodes
-  BARCODE_TXT_OFF             = [ 0x1d, 0x48, 0x00 ]         # HRI barcode chars OFF
-  BARCODE_TXT_ABV             = [ 0x1d, 0x48, 0x01 ]         # HRI barcode chars above
-  BARCODE_TXT_BLW             = [ 0x1d, 0x48, 0x02 ]         # HRI barcode chars below
-  BARCODE_TXT_BTH             = [ 0x1d, 0x48, 0x03 ]         # HRI barcode chars both above and below
-  BARCODE_FONT_A              = [ 0x1d, 0x66, 0x00 ]         # Font type A for HRI barcode chars
-  BARCODE_FONT_B              = [ 0x1d, 0x66, 0x01 ]         # Font type B for HRI barcode chars
-  BARCODE_HEIGHT              = [ 0x1d, 0x68 ]               # Barcode Height (1 - 255)
-  BARCODE_WIDTH               = [ 0x1d, 0x77 ]               # Barcode Width (2 - 6)
-  BARCODE_UPC_A               = [ 0x1d, 0x6b, 0x00 ]         # Barcode type UPC-A
-  BARCODE_UPC_E               = [ 0x1d, 0x6b, 0x01 ]         # Barcode type UPC-E
-  BARCODE_EAN13               = [ 0x1d, 0x6b, 0x02 ]         # Barcode type EAN13
-  BARCODE_EAN8                = [ 0x1d, 0x6b, 0x03 ]         # Barcode type EAN8
-  BARCODE_CODE39              = [ 0x1d, 0x6b, 0x04 ]         # Barcode type CODE39
-  BARCODE_ITF                 = [ 0x1d, 0x6b, 0x05 ]         # Barcode type ITF
-  BARCODE_NW7                 = [ 0x1d, 0x6b, 0x06 ]         # Barcode type NW7
-  BARCODE_CODE93              = [ 0x1d, 0x6b, 0x07 ]         # Barcode type CODE93
-  BARCODE_CODE128             = [ 0x1d, 0x6b, 0x08 ]         # Barcode type CODE128
+  BARCODE_TXT_OFF              = [ 0x1d, 0x48, 0x00 ]         # HRI barcode chars OFF
+  BARCODE_TXT_ABV              = [ 0x1d, 0x48, 0x01 ]         # HRI barcode chars above
+  BARCODE_TXT_BLW              = [ 0x1d, 0x48, 0x02 ]         # HRI barcode chars below
+  BARCODE_TXT_BTH              = [ 0x1d, 0x48, 0x03 ]         # HRI barcode chars both above and below
+  BARCODE_FONT_A               = [ 0x1d, 0x66, 0x00 ]         # Font type A for HRI barcode chars
+  BARCODE_FONT_B               = [ 0x1d, 0x66, 0x01 ]         # Font type B for HRI barcode chars
+  BARCODE_HEIGHT               = [ 0x1d, 0x68 ]               # Barcode Height (1 - 255)
+  BARCODE_WIDTH                = [ 0x1d, 0x77 ]               # Barcode Width (2 - 6)
+  BARCODE_UPC_A                = [ 0x1d, 0x6b, 0x00 ]         # Barcode type UPC-A
+  BARCODE_UPC_E                = [ 0x1d, 0x6b, 0x01 ]         # Barcode type UPC-E
+  BARCODE_EAN13                = [ 0x1d, 0x6b, 0x02 ]         # Barcode type EAN13
+  BARCODE_EAN8                 = [ 0x1d, 0x6b, 0x03 ]         # Barcode type EAN8
+  BARCODE_CODE39               = [ 0x1d, 0x6b, 0x04 ]         # Barcode type CODE39
+  BARCODE_ITF                  = [ 0x1d, 0x6b, 0x05 ]         # Barcode type ITF
+  BARCODE_NW7                  = [ 0x1d, 0x6b, 0x06 ]         # Barcode type NW7
+  BARCODE_CODE93               = [ 0x1d, 0x6b, 0x07 ]         # Barcode type CODE93
+  BARCODE_CODE128              = [ 0x1d, 0x6b, 0x08 ]         # Barcode type CODE128
 
   # Images
-  IMAGE                      = [ 0x1d, 0x76, 0x30, 0x00 ]    # Start image pixel data
+  IMAGE                        = [ 0x1d, 0x76, 0x30, 0x00 ]    # Start image pixel data
 
   # Transforms an array of codes into a string
   def sequence(*arr_sequence)

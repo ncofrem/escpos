@@ -91,7 +91,7 @@ module Escpos
     def align_left
       Escpos.sequence(Escpos::TXT_ALIGN_LT)
     end
-    
+
     def align_right
       Escpos.sequence(Escpos::TXT_ALIGN_RT)
     end
@@ -195,5 +195,13 @@ module Escpos
       Escpos.sequence(Escpos::PAPER_FULL_CUT)
     end
 
+    def open_cash_drawer
+      [
+        Escpos.sequence(Escpos::CD_KICK_2),
+        "\x00",
+        Escpos.sequence(Escpos::CD_KICK_5),
+        "\x00"
+      ].join
+    end
   end
 end
