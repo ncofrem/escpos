@@ -8,7 +8,7 @@ module Escpos
       data.encode(opts.fetch(:encoding), 'UTF-8', {
         invalid: opts.fetch(:invalid, :replace),
         undef: opts.fetch(:undef, :replace),
-        replace: opts.fetch(:replace, '?')        
+        replace: opts.fetch(:replace, '?')
       })
     end
 
@@ -184,6 +184,27 @@ module Escpos
         Escpos.sequence(opts.fetch(:format, Escpos::BARCODE_EAN13)),
         data,
         "\x00"
+      ].join
+    end
+
+    def send_data_escpos(data)
+      Escpos.sequence(data)
+    end
+
+    def pdf417(data)
+      # FIX ERROR PRINT PDF417 WITH pL > 120
+      mod_data = data.length % 256
+      text = mod_data > 120 ? data.ljust(data.length + 256 - mod_data, ' ') : data
+      # END FIX ERROR PRINT PDF417 WITH pL > 120
+      data_length = text.length + 3
+      pL = data_length % 256
+      pH = data_length / 256
+
+      [
+        Escpos.sequence(Escpos::BARCODE_WIDTH),
+        Escpos.sequence([2]),
+        Escpos.sequence(Escpos::BARCODE_PDF417 + [pL, pH]),
+        text
       ].join
     end
 
